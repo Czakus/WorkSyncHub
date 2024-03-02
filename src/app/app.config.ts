@@ -8,13 +8,13 @@ import { provideEffects } from '@ngrx/effects';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment.development';
-import { API_URL } from './tokens/api-url.token';
+import { API_URL } from './shared/tokens/api-url.token';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideStore(),
-    provideStoreDevtools({ name: 'WorkSyncHub' }),
+    provideStoreDevtools({ name: 'WSH' }),
     provideEffects(),
 
     {

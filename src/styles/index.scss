@@ -1,9 +1,8 @@
-@use "../projects/custom-material/src/lib/styles/mixins" as mixins;
-@use "components" as components;
+@use "../../projects/custom-material/src/lib/styles/mixins" as mixins;
+@use "./components" as components;
 
 @mixin index() {
  @include components.components;
-
 
  html {
   @include mixins.size(100%, 100%);
