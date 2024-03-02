@@ -1,9 +1,36 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment.development';
+import { API_URL } from './tokens/api-url.token';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideStore()]
+  providers: [
+    provideRouter(routes),
+    provideStore(),
+    provideStoreDevtools({ name: 'WorkSyncHub' }),
+    provideEffects(),
+
+    {
+      provide: LOCALE_ID,
+      useValue: 'pl-PL',
+    },
+
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'pl-PL',
+    },
+
+    {
+      provide: API_URL,
+      useValue: environment.API_URL
+    }
+
+  ],
 };

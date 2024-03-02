@@ -1,0 +1,10 @@
+@use "@angular/material" as mat;
+
+@mixin font($config, $level-name) {
+  font-family: mat.font-family($config, $level-name);
+  font-size: mat.font-size($config, $level-name);
+  font-weight: mat.font-weight($config, $level-name);
+
+  letter-spacing: mat.letter-spacing($config, $level-name);
+  line-height: mat.line-height($config, $level-name);
+}
