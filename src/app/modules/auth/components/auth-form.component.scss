@@ -1,0 +1,14 @@
+@use '../../../../../projects/custom-material/src/lib/styles/mixins' as mixins;
+
+.main {
+  @include mixins.flex(column, center, center, unset);
+
+  & > .form {
+    @include mixins.flex(column, unset, unset, unset);
+    @include mixins.size(40%,40%);
+
+    padding-top: 30px;
+  }
+}
+
+

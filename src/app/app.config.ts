@@ -9,6 +9,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment.development';
 import { API_URL } from './shared/tokens/api-url.token';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,7 +31,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: API_URL,
       useValue: environment.API_URL
-    }
+    }, provideAnimationsAsync('noop')
 
   ],
 };
