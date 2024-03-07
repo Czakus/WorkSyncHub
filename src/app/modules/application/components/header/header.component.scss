@@ -1,0 +1,6 @@
+@use '../../../../../../projects/custom-material/src/lib/styles/mixins' as mixins;
+
+:host {
+  @include mixins.size(100%,100%);
+  background-color: aqua;
+}

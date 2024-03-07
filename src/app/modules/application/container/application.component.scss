@@ -1,0 +1,28 @@
+@use '../../../../../projects/custom-material/src/lib/styles/mixins' as mixins;
+
+:host {
+  @include mixins.size(100vh, 100vw);
+}
+
+.main {
+  @include mixins.flex(row, unset, unset, unset);
+  @include mixins.size(100%, 100%);
+
+  .side-menu {
+    flex-grow: 1;
+    height: 100%
+  }
+
+  &-content {
+    @include mixins.flex(column, unset, unset, unset);
+    flex-grow: 7;
+
+    .header {
+      flex-grow: 1
+    }
+
+    .section {
+      flex-grow: 11;
+    }
+  }
+}
