@@ -11,14 +11,23 @@ import { environment } from '../environments/environment.development';
 import { API_URL } from './shared/tokens/api-url.token';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AuthReducer } from './modules/auth/store/auth.reducer';
+import { SignInService } from './modules/auth/services/sign-in.service';
+import { AuthFacade } from './modules/auth/store/auth.facade';
+import { SignInEffects } from './modules/auth/store/effects/sign-in.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimationsAsync('noop'),
     provideRouter(routes),
     provideStore(),
     provideState('auth', AuthReducer),
     provideStoreDevtools({ name: 'WSH' }),
-    provideEffects(),
+    provideEffects(
+      SignInEffects,
+    ),
+
+    AuthFacade,
+    SignInService,
 
     {
       provide: LOCALE_ID,
@@ -33,7 +42,6 @@ export const appConfig: ApplicationConfig = {
     {
       provide: API_URL,
       useValue: environment.API_URL
-    }, provideAnimationsAsync('noop')
-
+    }
   ],
 };

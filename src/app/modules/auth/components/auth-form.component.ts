@@ -1,10 +1,12 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import { FormControl, NonNullableFormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+
+export type SignInResult = FormGroup<SignInForm>;
 
 export interface SignInForm {
   email: FormControl<string>;
@@ -29,7 +31,14 @@ export interface SignInForm {
 export class AuthFormComponent {
   constructor(private formBuilder: NonNullableFormBuilder) {}
 
+  @Output()
+  signIn = new EventEmitter<SignInResult>();
+
   formGroup = this.createForm();
+
+  onSignInClicked() {
+    this.signIn.emit(this.formGroup);
+  }
 
   private createForm() {
     return this.formBuilder.group<SignInForm>({

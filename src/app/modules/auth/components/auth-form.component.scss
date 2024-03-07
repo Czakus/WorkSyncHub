@@ -1,7 +1,14 @@
 @use '../../../../../projects/custom-material/src/lib/styles/mixins' as mixins;
+:host {
+ @include mixins.size(100vh,100vw);
+ @include mixins.flex(column, center, center, unset);
 
+ background-color:darkslateblue;
+}
 .main {
   @include mixins.flex(column, center, center, unset);
+  @include mixins.size(60%, 60%);
+  background-color:chocolate;
 
   & > .form {
     @include mixins.flex(column, unset, unset, unset);

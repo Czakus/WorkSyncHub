@@ -2,12 +2,12 @@
   <form [formGroup]="formGroup" class="form">
     <mat-form-field>
       <label for="email">Email:</label>
-      <input matInput type="email">
+      <input matInput type="email" formControlName="email">
     </mat-form-field>
     <mat-form-field>
       <label for="password">Password:</label>
-      <input matInput type="password">
+      <input matInput type="password" formControlName="password">
     </mat-form-field>
-    <button mat-button color="primary">Zaloguj</button>
+    <button mat-button color="primary" (click)="onSignInClicked()">Zaloguj</button>
   </form>
 </div>
