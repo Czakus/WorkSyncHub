@@ -20,7 +20,6 @@ export class AuthComponent {
   ) {}
 
   onSignIn(signInForm: SignInResult) {
-    console.log(signInForm);
     this.authFacade.signUp({
       email: signInForm.controls.email.value,
       password: signInForm.controls.password.value,

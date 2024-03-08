@@ -1,6 +1,4 @@
-export interface User {
-  readonly id: string;
-}
+import { UserCredential } from "firebase/auth";
 
 export interface SignInRequest {
   email: string;
@@ -9,7 +7,7 @@ export interface SignInRequest {
 }
 
 export interface AuthState {
-  readonly user?: User;
+  readonly user?: UserCredential;
 }
 
 export const AuthInitialState: AuthState = {
