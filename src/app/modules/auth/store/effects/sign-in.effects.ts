@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 
 import { SignInService } from "../../services/sign-in.service";
 import { AuthFacade } from "../auth.facade";
-import { SignInAction, SignInSuccessAction, } from "../actions/sign-in.actions";
+import { SignInAction, SignInFailureAction, SignInSuccessAction, } from "../actions/sign-in.actions";
 
 @Injectable()
 export class SignInEffects {
@@ -20,7 +20,7 @@ export class SignInEffects {
     ofType(SignInAction),
     switchMap((action) => from(this.signInService.signIn(action.signInRequest.email, action.signInRequest.password)).pipe(
       map(userCred => SignInSuccessAction({user: userCred})),
-      catchError((error) => of(error))
+      catchError((error) => of(SignInFailureAction({error: error})))
     ))
   )
  })

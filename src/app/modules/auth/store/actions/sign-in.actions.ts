@@ -14,4 +14,5 @@ export const SignInSuccessAction = createAction(
 
 export const SignInFailureAction = createAction(
   '[Auth] Sign In - Failure',
+  props<{error: unknown}>()
 );
