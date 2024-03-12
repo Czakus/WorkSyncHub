@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { catchError, from, map, of, switchMap } from "rxjs";
+import { catchError, from, map, of, switchMap, tap } from "rxjs";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 
 import { SignInService } from "../../services/sign-in.service";
@@ -21,7 +21,8 @@ export class SignInEffects {
     switchMap((action) => from(this.signInService.signIn(action.signInRequest.email, action.signInRequest.password)).pipe(
       map(userCred => SignInSuccessAction({user: userCred})),
       catchError((error) => of(SignInFailureAction({error: error})))
-    ))
+    )),
+    tap((userCred) => console.log(userCred))
   )
  })
 }

@@ -7,7 +7,8 @@ export const AuthReducer = createReducer<AuthState>(
 
   on(SignInSuccessAction, (state, action): AuthState => ({
     ...state,
-    user: action.user
+    user: action.user,
+    isLoggedIn: true
   })
   )
 )

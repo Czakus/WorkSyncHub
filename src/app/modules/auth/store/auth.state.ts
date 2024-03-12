@@ -8,8 +8,10 @@ export interface SignInRequest {
 
 export interface AuthState {
   readonly user?: UserCredential;
+  readonly isLoggedIn: boolean;
 }
 
 export const AuthInitialState: AuthState = {
-  user: undefined
+  user: undefined,
+  isLoggedIn: false
 }

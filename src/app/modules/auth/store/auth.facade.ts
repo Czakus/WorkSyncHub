@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { selectAuthUser } from "./auth.selectors";
+import { selectAuthUser, selectIsLoggedIn } from "./auth.selectors";
 import { SignInRequest } from "./auth.state";
 import { SignInAction } from "./actions/sign-in.actions";
 
@@ -8,6 +8,8 @@ import { SignInAction } from "./actions/sign-in.actions";
 export class AuthFacade {
 
   user$ = this.store.select(selectAuthUser);
+
+  isLoggedIn$ = this.store.select(selectIsLoggedIn);
 
   constructor(private store: Store) {}
 

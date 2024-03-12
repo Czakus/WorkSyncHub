@@ -4,3 +4,5 @@ import { AuthState } from "./auth.state";
 export const selectAuth = createFeatureSelector<AuthState>('auth');
 
 export const selectAuthUser = createSelector(selectAuth, (state) => state.user);
+
+export const selectIsLoggedIn = createSelector(selectAuth, (state) => state.isLoggedIn);
