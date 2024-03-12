@@ -14,6 +14,8 @@ import { AuthReducer } from './modules/auth/store/auth.reducer';
 import { SignInService } from './modules/auth/services/sign-in.service';
 import { AuthFacade } from './modules/auth/store/auth.facade';
 import { SignInEffects } from './modules/auth/store/effects/sign-in.effects';
+import { UserService } from './modules/auth/services/user.service';
+import { AutoLoginEffects } from './modules/auth/store/effects/auto-login.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,10 +26,12 @@ export const appConfig: ApplicationConfig = {
     provideStoreDevtools({ name: 'WSH' }),
     provideEffects(
       SignInEffects,
+      AutoLoginEffects
     ),
 
     AuthFacade,
     SignInService,
+    UserService,
 
     {
       provide: LOCALE_ID,

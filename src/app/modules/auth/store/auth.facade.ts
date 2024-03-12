@@ -3,6 +3,7 @@ import { Store } from "@ngrx/store";
 import { selectAuthUser, selectIsLoggedIn } from "./auth.selectors";
 import { SignInRequest } from "./auth.state";
 import { SignInAction } from "./actions/sign-in.actions";
+import { AutoLoginAction } from "./actions/auto-login.actions";
 
 @Injectable()
 export class AuthFacade {
@@ -15,5 +16,9 @@ export class AuthFacade {
 
   signUp(signInRequest: SignInRequest) {
     this.store.dispatch(SignInAction({ signInRequest: signInRequest }));
+  }
+
+  autoSignIn() {
+    this.store.dispatch(AutoLoginAction());
   }
 }

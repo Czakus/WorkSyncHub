@@ -24,13 +24,12 @@ export class AuthComponent {
   }
 
   logged$ = this.authFacade.isLoggedIn$.subscribe((value) => {
-    console.log(value);
     if(value) {
-      this.router.navigateByUrl('/application');
+      return this.router.navigateByUrl('/application');
     }
-  })
 
-
+    return this.authFacade.autoSignIn();
+  });
 
   onSignIn(signInForm: SignInResult) {
     this.authFacade.signUp({
