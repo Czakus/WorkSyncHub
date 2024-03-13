@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { AutoLoginAction, AutoLoginFailureAction, AutoLoginSuccessAction } from '../actions/auto-login.actions';
@@ -7,13 +7,12 @@ import { map } from 'rxjs';
 
 @Injectable()
 export class AutoLoginEffects {
-  constructor(
-    private actions: Actions,
-    private userService: UserService
-  ) {}
+
+  actions$ = inject(Actions);
+  userService = inject(UserService);
 
   autoSignIn$ = createEffect(() => {
-    return this.actions.pipe(
+    return this.actions$.pipe(
       ofType(AutoLoginAction),
       map(() => {
         const userCred = this.userService.readUser();

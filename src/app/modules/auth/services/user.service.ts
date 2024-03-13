@@ -18,4 +18,8 @@ export class UserService {
   writeUser(user: UserCredential) {
     localStorage.setItem(this.userKey, JSON.stringify(user));
   }
+
+  clearUser() {
+    localStorage.removeItem(this.userKey);
+  }
 }
