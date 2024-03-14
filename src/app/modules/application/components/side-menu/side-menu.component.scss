@@ -4,3 +4,11 @@
   @include mixins.size(100%, 100%);
   background-color:lightskyblue;
 }
+
+.main {
+  @include mixins.size(100vh, auto);
+
+  .content {
+    @include mixins.size(100vh, auto);
+  }
+}

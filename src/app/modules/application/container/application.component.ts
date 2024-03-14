@@ -1,7 +1,9 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { SideMenuComponent } from "../components/side-menu/side-menu.component";
 import { HeaderComponent } from "../components/header/header.component";
+import { UserService } from "../../auth/services/user.service";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'wsh-app',
@@ -12,9 +14,12 @@ import { HeaderComponent } from "../components/header/header.component";
   imports: [
     CommonModule,
     SideMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    MatButtonModule
   ]
 })
 export class AppComponent {
+  userService = inject(UserService);
+
 
 }
