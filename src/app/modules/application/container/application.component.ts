@@ -21,5 +21,4 @@ import { MatButtonModule } from "@angular/material/button";
 export class AppComponent {
   userService = inject(UserService);
 
-
 }
