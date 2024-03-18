@@ -14,4 +14,4 @@ WorkSyncHub is a comprehensive application designed to facilitate efficient mana
 
 Frontend: HTML, CSS, JavaScript, Angular
 
-Backend: Firebase
+Backend: Firebase, Capacitor
