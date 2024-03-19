@@ -7,11 +7,11 @@ export interface SignInRequest {
 }
 
 export interface AuthState {
-  readonly user?: UserCredential;
+  readonly userCred?: UserCredential;
   readonly isLoggedIn: boolean;
 }
 
 export const AuthInitialState: AuthState = {
-  user: undefined,
+  userCred: undefined,
   isLoggedIn: false
 }

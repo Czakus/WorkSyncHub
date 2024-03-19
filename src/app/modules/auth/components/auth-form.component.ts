@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Output, inject } from "@angular/core";
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,7 +29,8 @@ export interface SignInForm {
   ]
 })
 export class AuthFormComponent {
-  constructor(private formBuilder: NonNullableFormBuilder) {}
+
+  formBuilder = inject(NonNullableFormBuilder);
 
   @Output()
   signIn = new EventEmitter<SignInResult>();

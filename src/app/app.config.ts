@@ -16,6 +16,7 @@ import { AuthFacade } from './modules/auth/store/auth.facade';
 import { SignInEffects } from './modules/auth/store/effects/sign-in.effects';
 import { UserService } from './modules/auth/services/user.service';
 import { AutoLoginEffects } from './modules/auth/store/effects/auto-login.effects';
+import { RefreshTokenService } from './modules/auth/services/refresh-token.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -32,6 +33,7 @@ export const appConfig: ApplicationConfig = {
     AuthFacade,
     SignInService,
     UserService,
+    RefreshTokenService,
 
     {
       provide: LOCALE_ID,

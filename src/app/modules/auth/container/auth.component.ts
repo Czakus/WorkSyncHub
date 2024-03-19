@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { AuthFormComponent, SignInResult } from "../components/auth-form.component";
 import { AuthFacade } from "../store/auth.facade";
 import { Router } from "@angular/router";
@@ -17,11 +17,9 @@ import { CommonModule } from "@angular/common";
 })
 export class AuthComponent {
 
-  constructor(
-    private authFacade: AuthFacade,
-    private router: Router
-  ) {
-  }
+
+  authFacade = inject(AuthFacade);
+  router = inject(Router);
 
   logged$ = this.authFacade.isLoggedIn$.subscribe((value) => {
     if(value) {
