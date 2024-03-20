@@ -10,7 +10,6 @@ export class AuthFacade {
 
   store = inject(Store);
 
-
   user$ = this.store.select(selectAuthUser);
 
   isLoggedIn$ = this.store.select(selectIsLoggedIn);
