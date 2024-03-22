@@ -1,11 +1,17 @@
 <div class="main">
+  <div class="logo">
+
+  </div>
+  <div class="header">
+    <h1>Welcome!</h1>
+  </div>
   <form [formGroup]="formGroup" class="form">
     <mat-form-field>
-      <label for="email">Email:</label>
+      <mat-label>Email:</mat-label>
       <input matInput type="email" formControlName="email">
     </mat-form-field>
     <mat-form-field>
-      <label for="password">Password:</label>
+      <mat-label>Password:</mat-label>
       <input matInput type="password" formControlName="password">
     </mat-form-field>
     <button mat-button color="primary" (click)="onSignInClicked()">Zaloguj</button>
