@@ -5,6 +5,8 @@ import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Va
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { H5HeaderDirecitve } from "../../../../../projects/custom-material/src/lib/components/typography/h5-header.directive";
+import { H3HeaderDirecitve } from "../../../../../projects/custom-material/src/lib/components/typography/h3-header.directive";
 
 export type SignInResult = FormGroup<SignInForm>;
 
@@ -25,7 +27,9 @@ export interface SignInForm {
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    H5HeaderDirecitve,
+    H3HeaderDirecitve,
   ]
 })
 export class AuthFormComponent {

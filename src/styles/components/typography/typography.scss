@@ -1,0 +1,16 @@
+@use '../../../../projects/custom-material/src/lib/styles/mixins' as mixins;
+@use '../../typography/desktop' as typo-desktop;
+
+@mixin component() {
+  .cm-body {
+    @include mixins.font(typo-desktop.$typography, body);
+  }
+
+  .cm-h3-header {
+    @include mixins.font(typo-desktop.$typography, h3-header);
+  }
+
+  .cm-h5-header {
+    @include mixins.font(typo-desktop.$typography, h5-header);
+  }
+}

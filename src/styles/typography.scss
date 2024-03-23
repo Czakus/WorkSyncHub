@@ -1,0 +1,10 @@
+@use '../../projects/custom-material/src/lib/styles/mixins' as mixins;
+@use 'typography/desktop' as typography-desktop;
+
+@mixin typography() {
+  html {
+    body {
+      @include mixins.font(typography-desktop.$typography, "body")
+    }
+  }
+}

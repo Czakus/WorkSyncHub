@@ -23,7 +23,7 @@
 
   & > .header {
     @include mixins.size(auto, 100%);
-    font-weight:bolder;
+    margin-bottom: 12px;
   }
 
   & > .form {
