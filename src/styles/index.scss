@@ -1,9 +1,11 @@
 @use "../../projects/custom-material/src/lib/styles/mixins" as mixins;
 @use "./components" as components;
+@use './typography' as typography;
 
 
 @mixin index() {
  @include components.components();
+ @include typography.typography();
 
  html {
   @include mixins.size(100%, 100%);
@@ -13,7 +15,6 @@
 
     margin: 0;
     padding: 0;
-
 
     * {
       box-sizing: border-box;

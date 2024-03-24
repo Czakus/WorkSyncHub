@@ -1,7 +1,7 @@
 @use "@angular/material" as mat;
 
 $typography: (
-  body: mat.define-typography-level(17px, 24px, 400, "Roboto", normal),
-  h3-header: mat.define-typography-level(30px, 24px, 600, "Roboto", normal),
-  h5-header: mat.define-typography-level(20px, 24px, 500, "Roboto", normal),
+  body: mat.define-typography-level(17px, 24px, 400, "Roboto Condensed", normal),
+  h3-header: mat.define-typography-level(30px, 24px, 600, "Roboto Condensed", normal),
+  h5-header: mat.define-typography-level(20px, 24px, 500, "Roboto Condensed", normal),
 )

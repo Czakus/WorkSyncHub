@@ -1,5 +1,9 @@
 @use '../../projects/custom-material/src/lib/styles/mixins' as mixins;
 @use 'typography/desktop' as typography-desktop;
+@use './fonts/roboto-condensed' as roboto-condensed;
+
+
+@include roboto-condensed.font();
 
 @mixin typography() {
   html {

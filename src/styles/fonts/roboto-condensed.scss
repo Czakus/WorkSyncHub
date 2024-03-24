@@ -1,0 +1,30 @@
+@mixin font-face($font-weight, $font-style, $url) {
+  @font-face {
+    font-family: "Roboto Condensed";
+    font-style: $font-style;
+    font-weight: $font-weight;
+
+    src: url("/assets/fonts/Roboto_Condensed/RobotoCondensed-#{$url}.ttf") format("truetype");
+  }
+}
+
+@mixin font() {
+  @include font-face(100, normal, "Thin");
+  @include font-face(100, italic, "ThinItalic");
+  @include font-face(200, normal, "ExtraLight");
+  @include font-face(200, italic, "ExtraLightItalic");
+  @include font-face(300, normal, "Light");
+  @include font-face(300, italic, "LightItalic");
+  @include font-face(400, normal, "Regular");
+  @include font-face(400, italic, "Italic");
+  @include font-face(500, normal, "Medium");
+  @include font-face(500, italic, "MediumItalic");
+  @include font-face(600, normal, "SemiBold");
+  @include font-face(600, italic, "SemiBoldItalic");
+  @include font-face(700, normal, "Bold");
+  @include font-face(700, italic, "BoldItalic");
+  @include font-face(800, normal, "ExtraBold");
+  @include font-face(800, italic, "ExtraBoldItalic");
+  @include font-face(900, normal, "Black");
+  @include font-face(900, italic, "BlackItalic");
+}

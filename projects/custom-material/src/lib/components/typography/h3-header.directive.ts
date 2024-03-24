@@ -6,5 +6,5 @@ import { Directive, HostBinding } from "@angular/core";
 })
 export class H3HeaderDirecitve {
   @HostBinding('class.cm-h3-header')
-  wshH5Header = true;
+  cmH5Header = true;
 }
