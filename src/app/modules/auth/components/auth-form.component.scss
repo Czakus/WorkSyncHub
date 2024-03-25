@@ -10,7 +10,8 @@
   @include mixins.flex(column, center, center, unset);
   @include mixins.size(100%, 100%);
 
-  padding: 32px;
+  padding-left: 128px;
+  padding-right: 128px;
 
   & > .logo {
     min-height: 300px;
@@ -23,7 +24,7 @@
 
   & > .header {
     @include mixins.size(auto, 100%);
-    margin-bottom: 12px;
+    padding-bottom: 36px;
   }
 
   & > .form {

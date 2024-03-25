@@ -1,0 +1,58 @@
+@use '../../styles/mixins' as mixins;
+@use 'sass:map';
+
+@mixin component($config) {
+  $pallete: map.get($config, pallete);
+  $typography: map.get($config, typography);
+
+  $disabled-selector: '.mdc-text-field--disabled';
+  $outlined-selector: '.mdc-text-field--outlined';
+
+  mat-form-field.mat-mdc-form-field.cm-form-field {
+    @include mixins.font(
+      map.get($typography, config),
+      map.get($typography, level-name)
+    );
+
+    .mdc-text-field--outlined:not(#{$disabled-selector}) .mdc-text-field__input {
+      color: black !important;
+    }
+
+    #{$outlined-selector}:not(#{$disabled-selector}) {
+      .mdc-notched-outline__trailing,
+      .mdc-notched-outline__leading,
+      .mdc-notched-outline__notch,
+      .mat-focused {
+        border-color: map.get($pallete, outline-color);
+      }
+
+      &.mdc-text-field--focused {
+        .mdc-floating-label,
+        .mdc-floating-label--float-above {
+          border-color: map.get($pallete, outline-color__focused);
+        }
+
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+          border-color: map.get($pallete, outline-color__focused);
+        }
+      }
+
+      .mdc-floating-label,
+      .mdc-floating-label--float-above {
+        color: map.get($pallete, outline-color);
+      }
+    }
+  }
+
+  .mat-focused, .mdc-text-field--focused {
+    border-color: map.get($pallete, outline-color__focused);
+  }
+
+  input:-webkit-autofill {
+    background-color: map.get($pallete, background) !important;
+    -webkit-box-shadow: 0 0 0 50px map.get($pallete, background) inset;
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+  }
+}

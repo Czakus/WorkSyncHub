@@ -1,0 +1,19 @@
+@use '../../../../projects/custom-material/src/lib/components/form-field/form-field' as form-field;
+@use '../../typography/desktop' as typography-desktop;
+
+$config: (
+  pallete:(
+    text-color: black,
+    background: #e7c4ab,
+    outline-color: #6A704C,
+    outline-color__focused: #333625
+  ),
+  typography: (
+    level-name: body,
+    config: typography-desktop.$typography,
+  )
+);
+
+@mixin component() {
+  @include form-field.component($config);
+}

@@ -17,6 +17,7 @@ import { SignInEffects } from './modules/auth/store/effects/sign-in.effects';
 import { UserService } from './modules/auth/services/user.service';
 import { AutoLoginEffects } from './modules/auth/store/effects/auto-login.effects';
 import { RefreshTokenService } from './modules/auth/services/refresh-token.service';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -48,6 +49,11 @@ export const appConfig: ApplicationConfig = {
     {
       provide: API_URL,
       useValue: environment.API_URL
+    },
+
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { hideRequiredMarker: true }
     }
   ],
 };

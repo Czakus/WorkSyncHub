@@ -4,8 +4,7 @@
   @include mixins.flex(row, unset, unset, unset);
 
   & > .image-panel {
-    @include mixins.size(100vh, 100%);
-    flex-grow: 5;
+    @include mixins.size(100vh, 40%);
 
     & > img {
       @include mixins.size(100%, 100%);
@@ -15,6 +14,6 @@
   }
 
   & > wsh-auth-form {
-    flex-grow: 3;
+    width: 60%;
   }
 }
