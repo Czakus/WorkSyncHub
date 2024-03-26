@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { H5HeaderDirecitve } from "../../../../../projects/custom-material/src/lib/components/typography/h5-header.directive";
 import { H3HeaderDirecitve } from "../../../../../projects/custom-material/src/lib/components/typography/h3-header.directive";
 import { FormFieldDirective } from "../../../../../projects/custom-material/src/lib";
+import { ButtonDirective } from "../../../../../projects/custom-material/src/lib/components/button";
 
 export type SignInResult = FormGroup<SignInForm>;
 
@@ -31,7 +32,8 @@ export interface SignInForm {
     MatButtonModule,
     H5HeaderDirecitve,
     H3HeaderDirecitve,
-    FormFieldDirective
+    FormFieldDirective,
+    ButtonDirective
   ]
 })
 export class AuthFormComponent {

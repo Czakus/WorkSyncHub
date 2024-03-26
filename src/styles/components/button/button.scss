@@ -1,0 +1,18 @@
+@use '../../../../projects/custom-material/src/lib/components/button/button' as button;
+@use '../../typography/desktop' as typo-desktop;
+
+$config: (
+  palette: (
+    background: #6A704C,
+    color: #EDE1D1
+  ),
+
+  typography: (
+    level-name: body,
+    config: typo-desktop.$typography
+  )
+);
+
+@mixin component() {
+  @include button.component($config);
+}

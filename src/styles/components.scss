@@ -1,7 +1,9 @@
 @use 'components/typography/typography' as typography;
 @use 'components/form-field/form-field' as form-field;
+@use 'components/button/button' as button;
 
 @mixin components() {
  @include typography.component();
  @include form-field.component();
+ @include button.component();
 }
