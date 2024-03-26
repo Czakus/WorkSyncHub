@@ -7,6 +7,7 @@
 
   $disabled-selector: '.mdc-text-field--disabled';
   $outlined-selector: '.mdc-text-field--outlined';
+  $invalid-selector: '.mdc-text-field--invalid';
 
   mat-form-field.mat-mdc-form-field.cm-form-field {
     @include mixins.font(
@@ -18,7 +19,7 @@
       color: black !important;
     }
 
-    #{$outlined-selector}:not(#{$disabled-selector}) {
+    #{$outlined-selector}:not(#{$disabled-selector}, #{$invalid-selector}) {
       .mdc-notched-outline__trailing,
       .mdc-notched-outline__leading,
       .mdc-notched-outline__notch,
