@@ -5,11 +5,11 @@ import { Directive, HostBinding, Input } from '@angular/core';
   standalone: true,
 })
 export class ColorDirective {
-  @Input('cust-color')
+  @Input('cm-color')
   colorName = '';
 
   @HostBinding('class')
   get className() {
-    return 'cust-color-' + this.colorName;
+    return 'cm-color-' + this.colorName;
   }
 }

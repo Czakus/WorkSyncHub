@@ -11,6 +11,8 @@
       map.get($typography, level-name)
     );
 
+    @include mixins.size(64px, auto);
+
     background-color: map.get($palette, background);
 
     .mdc-button__label {

@@ -9,6 +9,8 @@ import { H5HeaderDirecitve } from "../../../../../projects/custom-material/src/l
 import { H3HeaderDirecitve } from "../../../../../projects/custom-material/src/lib/components/typography/h3-header.directive";
 import { FormFieldDirective } from "../../../../../projects/custom-material/src/lib";
 import { ButtonDirective } from "../../../../../projects/custom-material/src/lib/components/button";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CheckboxDirective } from "../../../../../projects/custom-material/src/lib/components/checkbox";
 
 export type SignInResult = FormGroup<SignInForm>;
 
@@ -30,10 +32,12 @@ export interface SignInForm {
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatCheckboxModule,
     H5HeaderDirecitve,
     H3HeaderDirecitve,
     FormFieldDirective,
-    ButtonDirective
+    ButtonDirective,
+    CheckboxDirective
   ]
 })
 export class AuthFormComponent {

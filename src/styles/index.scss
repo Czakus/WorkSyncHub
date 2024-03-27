@@ -1,7 +1,7 @@
 @use "../../projects/custom-material/src/lib/styles/mixins" as mixins;
 @use "./components" as components;
 @use './typography' as typography;
-
+@import './theme/theme.scss';
 
 @mixin index() {
  @include components.components();

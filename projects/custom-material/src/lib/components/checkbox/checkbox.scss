@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '../../styles/mixins' as mixins;
+
+@mixin component($config) {
+  $palette: map.get($config, palette);
+  $typography: map.get($config, typography);
+
+
+  mat-checkbox.cm-checkbox {
+    @include mixins.font(
+      map.get($typography, config),
+      map.get($typography, level-name
+    ));
+
+
+    & > .mdc-form-field {
+      color: map.get($palette, primary-dark);
+    }
+
+    .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+      border-color: map.get($palette, primary);
+    }
+
+    .mdc-checkbox:not(:disabled):active .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+      border-color: map.get($palette, primary);
+      background-color: map.get($palette, primary);
+    }
+    .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
+      border-color: map.get($palette, primary);
+      background-color: map.get($palette, primary);
+    }
+
+    .mdc-checkbox .mdc-checkbox__native-control:focus:checked~.mdc-checkbox__ripple {
+      background-color: map.get($palette, primary);
+    }
+  }
+}

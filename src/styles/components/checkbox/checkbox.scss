@@ -1,0 +1,32 @@
+@use '../../../../projects/custom-material/src/lib/components/checkbox/checkbox' as checkbox;
+@use '../../typography/desktop' as typo-desktop;
+
+// $config: (
+//   palette: (
+//     primary: #6A704C,
+//     primary-dark: #333625,
+//     color: black
+//   ),
+
+//   typography: (
+//     level-name: body,
+//     config: typo-desktop.$typography
+//   )
+// );
+
+$config: (
+  palette: (
+    primary: auto,
+    primary-dark: auto,
+    color: auto
+  ),
+
+  typography: (
+    level-name: body,
+    config: typo-desktop.$typography
+  )
+);
+
+@mixin component() {
+  @include checkbox.component($config);
+}

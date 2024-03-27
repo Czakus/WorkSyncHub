@@ -5,11 +5,11 @@ import { Directive, HostBinding, Input } from '@angular/core';
   standalone: true,
 })
 export class SizeDirective {
-  @Input('cust-size')
+  @Input('cm-size')
   sizeName = '';
 
   @HostBinding('class')
   get className() {
-    return 'cust-size-' + this.sizeName;
+    return 'cm-size-' + this.sizeName;
   }
 }

@@ -1,0 +1,69 @@
+@use '@angular/material' as mat;
+
+$primary: (
+  50: #F2F5E9,
+  100: #DDE6C5,
+  200: #C6D69E,
+  300: #b0c777,
+  400: #9fbc58,
+  500: #8eb13a,
+  600: #7fa233,
+  700: #6b8f29,
+  800: #587b21,
+  900: #365a10,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: rgba(black, 0.87),
+    800: rgba(black, 0.87),
+    900: rgba(black, 0.87)
+  )
+);
+
+$accent: (
+  50: #eae3f3,
+  100: #c9bbe2,
+  200: #a68fcf,
+  300: #8262bc,
+  400: #6841af,
+  500: #4c1fa2,
+  600: #431b9d,
+  700: #351394,
+  800: #260d8d,
+  900: #000080,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: rgba(black, 0.87),
+    800: rgba(black, 0.87),
+    900: rgba(black, 0.87)
+  )
+);
+
+$primary-palette: mat.define-palette($primary, 900);
+$accent-palette: mat.define-palette($accent, 900);
+$warn-palette: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary-palette,
+    accent: $accent-palette,
+    warn: $warn-palette
+  ),
+
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.core-theme($theme);
+@include mat.all-component-themes($theme);

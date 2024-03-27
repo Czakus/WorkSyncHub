@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use "./styles/index.scss" as WSH;
-@import "normalize.css";
-@include WSH.index();
+@use '@angular/material' as mat;
 
+@import "normalize.css";
+
+@include mat.core();
+@include WSH.index();
 
 
 html, body { height: 100%; }
